@@ -33,7 +33,7 @@ export default function AddScooterForm({ notifyScooterAddition }) {
   };
   const saveNewScooter = () => {
     if (!/[A-Z]{3}[\d]{2}/.test(scooter.registrationCode)) {
-      alert("Bad registration code");
+      alert("Registration code must contain 3 uppercase letters and 2 numbers");
       return;
     }
     notifyScooterAddition(scooter);
