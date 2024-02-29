@@ -14,7 +14,7 @@ export default function Layout() {
 
   function updateFilter(newFilter) {
     if (typeof newFilter !== "string") {
-      console.error("Invalid filter type:", typeof newFilter);
+      console.error("Invalid filter type:", typeof  newFilter);
       return;
     }
     setFilter(newFilter);
