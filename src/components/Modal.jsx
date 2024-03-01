@@ -43,7 +43,7 @@ function Modal({ onClose, onSave, initialData }) {
     <div className="fixed top-0 left-0 w-full h-full flex justify-center items-center bg-gray-800 bg-opacity-75 z-50">
       <div
         className="modalContent bg-gray-900 p-8 rounded-lg text-white relative"
-        style={{ width: "15%" }}
+        style={{ width: "90%", maxWidth: "600px" }}
       >
         <button
           className="absolute top-2 right-1 text-white text-lg cursor-pointer mx-4 "
@@ -52,7 +52,9 @@ function Modal({ onClose, onSave, initialData }) {
         >
           X
         </button>
-        <h2 className="text-3xl font-bold mb-4 modalTitle text-purple-800">Scooter Update</h2>
+        <h2 className="text-3xl font-bold mb-4 modalTitle text-purple-800">
+          Scooter Update
+        </h2>
         <form>
           <div className="mb-4">
             <label
@@ -62,7 +64,7 @@ function Modal({ onClose, onSave, initialData }) {
               Title
             </label>
             <input
-              className=" rounded w-full py-2 px-3 bg-gray-800 text-white hover:bg-gray-700"
+              className="rounded w-full py-2 px-3 bg-gray-800 text-white hover:bg-gray-700"
               type="text"
               id="title"
               name="title"
@@ -78,7 +80,7 @@ function Modal({ onClose, onSave, initialData }) {
               Ride
             </label>
             <input
-              className=" rounded w-full py-2 px-3 bg-gray-800 text-white hover:bg-gray-700"
+              className="rounded w-full py-2 px-3 bg-gray-800 text-white hover:bg-gray-700"
               type="number"
               id="ride"
               name="ride"
@@ -94,7 +96,7 @@ function Modal({ onClose, onSave, initialData }) {
               Registration Code
             </label>
             <input
-              className=" rounded w-full py-2 px-3 bg-gray-800 text-white hover:bg-gray-700"
+              className="rounded w-full py-2 px-3 bg-gray-800 text-white hover:bg-gray-700"
               type="text"
               id="registrationCode"
               name="registrationCode"
@@ -110,7 +112,7 @@ function Modal({ onClose, onSave, initialData }) {
               Price/h
             </label>
             <input
-              className=" rounded w-full py-2 px-3 bg-gray-800 text-white hover:bg-gray-700"
+              className="rounded w-full py-2 px-3 bg-gray-800 text-white hover:bg-gray-700"
               type="number"
               id="hourlyPrice"
               name="hourlyPrice"
@@ -126,7 +128,7 @@ function Modal({ onClose, onSave, initialData }) {
               Date Last Used
             </label>
             <input
-              className=" rounded w-full py-2 px-3 bg-gray-800 text-white hover:bg-gray-700"
+              className="rounded w-full py-2 px-3 bg-gray-800 text-white hover:bg-gray-700"
               type="date"
               id="lastUseTime"
               name="lastUseTime"
@@ -142,7 +144,7 @@ function Modal({ onClose, onSave, initialData }) {
               Status
             </label>
             <select
-              className=" rounded w-full py-2 px-3 bg-gray-800 text-white hover:bg-gray-700"
+              className="rounded w-full py-2 px-3 bg-gray-800 text-white hover:bg-gray-700"
               id="isBusy"
               name="isBusy"
               value={formData.isBusy}
