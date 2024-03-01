@@ -49,7 +49,7 @@ export default function Middle({ newScooter, filter, selectFilter }) {
     }
 
     if (scooterToUpdate.isBusy) {
-      const newMileageInput = prompt("Enter the number of kilometers ridden:");
+      const newMileageInput = prompt("Enter kilometers ridden.");
 
       if (newMileageInput === null) {
         return;

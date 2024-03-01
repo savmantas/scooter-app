@@ -12,7 +12,7 @@ export default function AddScooterForm({ notifyScooterAddition }) {
 
   const handleRideChange = (e) => {
     const newValue = +e.target.value;
-    if (newValue < 0) alert("The mileage value cannot be less than zero");
+    if (newValue < 0) alert("The mileage value cannot be less than zero.");
     else setScooter({ ...scooter, ride: newValue });
   };
   const handleNameChange = (e) => {
@@ -21,19 +21,19 @@ export default function AddScooterForm({ notifyScooterAddition }) {
   const handleNationalNumberChange = (e) => {
     const newValue = e.target.value;
     if (newValue.length > 5)
-      alert("The license plate number cannot be longer than 5 characters");
+      alert("The license plate number cannot be longer than 5 characters.");
     else setScooter({ ...scooter, registrationCode: newValue });
   };
   const handlePricingChange = (e) => {
     const newValue = +e.target.value;
-    if (newValue < 0) alert("The price value cannot be less than 0");
+    if (newValue < 0) alert("The price value cannot be less than 0.");
     else if (newValue > 100)
-      alert("The price value cannot be greater than 100");
+      alert("The price value cannot be greater than 100.");
     else setScooter({ ...scooter, hourlyPrice: newValue });
   };
   const saveNewScooter = () => {
     if (!/[A-Z]{3}[\d]{2}/.test(scooter.registrationCode)) {
-      alert("Registration code must contain 3 uppercase letters and 2 numbers");
+      alert("Registration code must contain 3 uppercase letters and 2 numbers.");
       return;
     }
     notifyScooterAddition(scooter);
