@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
 import PropTypes from "prop-types";
 import { FaPencilAlt, FaTrashAlt } from "react-icons/fa";
 import Modal from "./Modal";
@@ -34,6 +34,31 @@ export default function Middle({ newScooter, filter, selectFilter }) {
     }
     return data;
   }
+
+  const filteredScooters = useMemo(() => {
+    return scooters
+      .filter((scooter) => {
+        if (filter === "all") return true;
+        return (
+          (filter === "free" && !scooter.isBusy) ||
+          (filter === "busy" && scooter.isBusy)
+        );
+      })
+      .sort((scooterA, scooterB) => {
+        switch (selectFilter) {
+          case "priceLowest":
+            return scooterA.hourlyPrice - scooterB.hourlyPrice;
+          case "priceHighest":
+            return scooterB.hourlyPrice - scooterA.hourlyPrice;
+          case "rideLowest":
+            return scooterA.ride - scooterB.ride;
+          case "rideHighest":
+            return scooterB.ride - scooterA.ride;
+          default:
+            return 0;
+        }
+      });
+  }, [scooters, filter, selectFilter]);
 
   const handleDeleteScooter = (id) => {
     setScooters((prevScooters) =>
@@ -91,31 +116,6 @@ export default function Middle({ newScooter, filter, selectFilter }) {
       );
     }
   };
-
-  const handleSortScooters = (scooterA, scooterB) => {
-    switch (selectFilter) {
-      case "priceLowest":
-        return scooterA.hourlyPrice - scooterB.hourlyPrice;
-      case "priceHighest":
-        return scooterB.hourlyPrice - scooterA.hourlyPrice;
-      case "rideLowest":
-        return scooterA.ride - scooterB.ride;
-      case "rideHighest":
-        return scooterB.ride - scooterA.ride;
-      default:
-        return 0;
-    }
-  };
-
-  const filteredScooters = scooters
-    .filter((scooter) => {
-      if (filter === "all") return true;
-      return (
-        (filter === "free" && !scooter.isBusy) ||
-        (filter === "busy" && scooter.isBusy)
-      );
-    })
-    .sort(handleSortScooters);
 
   const handleEditScooter = (scooter) => {
     setEditScooter(scooter);
