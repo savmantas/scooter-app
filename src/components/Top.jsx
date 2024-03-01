@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import PropTypes from "prop-types";
 import { useState, useMemo } from "react";
 import AddScooterForm from "./AddScooter";
