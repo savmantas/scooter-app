@@ -77,7 +77,7 @@ function Modal({ onClose, onSave, initialData }) {
               className="block text-xl font-bold mb-2 text-purple-800"
               htmlFor="ride"
             >
-              Ride
+              Mileage
             </label>
             <input
               className="rounded w-full py-2 px-3 bg-gray-800 text-white hover:bg-gray-700"
