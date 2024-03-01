@@ -49,7 +49,7 @@ export default function Top({
 
       <div className="relative z-10">
         <h2 className="text-center text-warning  my-20 text-xl md:text-2xl lg:text-3xl xl:text-5xl title text-blue-800 titles">
-          SCOOTER ADMIN
+          SCOOTER ADMIN PAGE
         </h2>
         <AddScooterForm
           notifyScooterAddition={notifyScooterAddition}
